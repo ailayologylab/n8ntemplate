@@ -1,0 +1,796 @@
+{
+  "metadata": {
+    "title": "n8n 模板智慧索引指南",
+    "description": "結構化的 n8n 自動化模板分類與詳細資訊",
+    "version": "1.0",
+    "last_updated": "2025-01-27",
+    "total_templates": 1223,
+    "categories": 15
+  },
+  "categories": {
+    "ai_agents": {
+      "name": "AI 智能代理",
+      "description": "各種 AI 代理系統，包括多代理協調、智能路由和自動化決策",
+      "templates": [
+        {
+          "id": "multi_agent_orchestrator",
+          "name": "多代理協調系統",
+          "creator": "Nate Herk | AI Automation",
+          "description": "使用 n8n 構建多代理協調器系統，將複雜任務分解為專業子代理",
+          "features": [
+            "專業子代理（郵件、聯絡人、日曆、內容創作）",
+            "子工作流程通訊",
+            "Gmail、Airtable 整合",
+            "模型選擇（GPT-4.1 mini、Flash）"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["任務委派", "複雜流程自動化", "團隊協作"],
+          "template_url": "https://drive.google.com/file/d/1jdVCKryUCc1vqHKwv4foMO6LP_nWayZR/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=0iUNOmeU7O4",
+          "date_posted": "2025-06-10"
+        },
+        {
+          "id": "browser_agent",
+          "name": "瀏覽器代理",
+          "creator": "Nate Herk | AI Automation",
+          "description": "使用 Airtop 和 OpenRouter 構建的無程式碼瀏覽器代理",
+          "features": [
+            "遠端瀏覽器互動",
+            "DOM 元素查詢",
+            "點擊和輸入動作",
+            "模擬人類行為"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["網頁爬取", "網站互動", "自動化測試"],
+          "template_url": "https://drive.google.com/file/d/1fNVk3fKckZFDnguqxzmai-lrJ1Ix2Trb/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=ar37oypyATQ",
+          "date_posted": "2025-06-08"
+        },
+        {
+          "id": "local_ai_agent",
+          "name": "本地 AI 代理工作流程",
+          "creator": "Cole Medin",
+          "description": "構建本地 AI 系統，包含 n8n 工作流程代理",
+          "features": [
+            "開源組件（Olama、Superbase、CRXNG、Open Web UI）",
+            "私有離線 AI 解決方案",
+            "LLM 配置和量化",
+            "Docker 容器化"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["本地 AI 部署", "隱私保護", "離線處理"],
+          "template_url": "https://drive.google.com/file/d/1amYKoQv0mqN_Jhe9bxEhqJSiU7A_Vw7J/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=mNcXue7X8H0",
+          "date_posted": "2025-06-12"
+        }
+      ]
+    },
+    "content_creation": {
+      "name": "內容創作自動化",
+      "description": "自動化內容生成、影片製作和社交媒體發布",
+      "templates": [
+        {
+          "id": "viral_ai_videos",
+          "name": "病毒 AI 影片生成",
+          "creator": "Mahmut Kasimoglu | AI Automation",
+          "description": "使用 Veo 3 在 N8N 中生成病毒 AI 影片",
+          "features": [
+            "手動觸發器",
+            "Google Sheets 資料檢索",
+            "AI 提示代理",
+            "FAL AI V3 模型整合"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["影片行銷", "內容創作", "社交媒體"],
+          "template_url": "https://drive.google.com/file/d/1N6CHyusk8ucayPuJswGlcpp7Rf2xe9dR/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=axBR8S7AepQ",
+          "date_posted": "2025-06-12"
+        },
+        {
+          "id": "faceless_video_maker",
+          "name": "無臉影片製作器",
+          "creator": "Jono Catliff",
+          "description": "使用 AI + n8n 自動化無臉 YouTube 影片創作",
+          "features": [
+            "Google Sheets 觸發",
+            "AI 代理腳本生成",
+            "影片合併和字幕",
+            "音頻合成"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["YouTube 內容", "教育影片", "行銷內容"],
+          "template_url": "https://drive.google.com/file/d/1_rNeNA-OiXTdB_VoK5LYoWRN05FOwdf1/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=MjZSsasHSq8",
+          "date_posted": "2025-05-22"
+        },
+        {
+          "id": "viral_shorts_machine",
+          "name": "24/7 病毒短片機器",
+          "creator": "Nate Herk | AI Automation",
+          "description": "24/7 自動化內容創作工作流程，將簡單的 Google Sheet 條目轉換為高品質病毒社交媒體短片",
+          "features": [
+            "FAL Flux 圖像生成",
+            "Cling 影片創作",
+            "ElevenLabs 音頻合成",
+            "Creatomate 媒體拼接"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["社交媒體行銷", "內容自動化", "品牌推廣"],
+          "template_url": "https://drive.google.com/file/d/1-znRsMWmFUFbr1lFUjLGr42azzMlxPEz/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=BcfjIBd49C8",
+          "date_posted": "2025-05-19"
+        }
+      ]
+    },
+    "marketing_automation": {
+      "name": "行銷自動化",
+      "description": "自動化行銷流程、潛在客戶生成和客戶關係管理",
+      "templates": [
+        {
+          "id": "fb_ad_spy_tool",
+          "name": "Facebook 廣告間諜工具",
+          "creator": "Nick Saraev",
+          "description": "使用 n8n 構建 Facebook 廣告間諜工具和分析器",
+          "features": [
+            "Appify 爬取 Facebook 廣告庫",
+            "OpenAI GPT-4.5 重寫廣告文案",
+            "Gemini API 影片分析",
+            "Google Sheets 資料儲存"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["競爭分析", "廣告研究", "市場洞察"],
+          "template_url": "https://drive.google.com/file/d/1whrqvO_wTk_NFhufCd3oqD0ZiSk9kaWI/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=0PJNiDuihBg",
+          "date_posted": "2025-06-18"
+        },
+        {
+          "id": "lead_qualifier_system",
+          "name": "AI 電話代理潛在客戶資格審查",
+          "creator": "Rory Ridgers",
+          "description": "自動化端到端潛在客戶資格審查系統",
+          "features": [
+            "網站爬取和 HTML 轉 markdown",
+            "Tavly API LinkedIn 資料",
+            "LLM 潛在客戶摘要",
+            "Vapi AI 電話代理"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["銷售自動化", "潛在客戶篩選", "會議安排"],
+          "template_url": "https://drive.google.com/file/d/1KQpLyRi9HymVoAaI0Pu8beaUZymDybYk/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=oU8K3i5KqEc",
+          "date_posted": "2025-05-30"
+        },
+        {
+          "id": "deep_cold_email_outreach",
+          "name": "深度個人化冷郵件外展",
+          "creator": "Nick Saraev",
+          "description": "自動化個人化和發送 1000+ 冷郵件",
+          "features": [
+            "Apollo 潛在客戶資料",
+            "Apify 爬取",
+            "Instantly 郵件發送",
+            "OpenAI GPT-4.1 個人化"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["銷售外展", "潛在客戶開發", "B2B 行銷"],
+          "template_url": "https://drive.google.com/file/d/1mEJe6n3ohryVRm58sCBqfO5kyh-r49fb/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=oAWe5wFwHlo",
+          "date_posted": "2025-05-05"
+        }
+      ]
+    },
+    "data_processing": {
+      "name": "資料處理與分析",
+      "description": "資料爬取、處理、分析和洞察生成",
+      "templates": [
+        {
+          "id": "ai_video_analysis",
+          "name": "AI 影片分析",
+          "creator": "Nate Herk | AI Automation",
+          "description": "使用 n8n + Google Gemini 進行免費 AI 影片分析的最簡單設置",
+          "features": [
+            "本地檔案上傳和 YouTube URL 支援",
+            "輪詢監控影片處理狀態",
+            "Google API 憑證設置",
+            "詳細分析（摘要、洞察提取）"
+          ],
+          "difficulty": "初級",
+          "use_cases": ["影片分析", "內容研究", "教育分析"],
+          "template_url": "https://drive.google.com/file/d/1ezBjOM64sn9NS9SUblxEauLWuWm4LMAn/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=acB2o6nwAn8",
+          "date_posted": "2025-06-12"
+        },
+        {
+          "id": "web_scraper_agent",
+          "name": "網頁爬取代理",
+          "creator": "Nate Herk | AI Automation",
+          "description": "使用 Firecrawl 強大搜尋 API 進行精確網頁爬取和全頁截圖",
+          "features": [
+            "Firecrawl 搜尋 API",
+            "進階查詢運算子",
+            "多種輸出格式",
+            "Bearer token 認證"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["競爭研究", "資料收集", "內容監控"],
+          "template_url": "https://drive.google.com/file/d/1klYxj1CZI2sLFT_li6sUEJUESn4KIgSi/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=3Pim6uCASSE",
+          "date_posted": "2025-06-03"
+        },
+        {
+          "id": "google_map_scraper",
+          "name": "Google 地圖爬取器",
+          "creator": "Nick Saraev",
+          "description": "使用免費 n8n 工作流程從 Google 地圖爬取無限潛在客戶",
+          "features": [
+            "HTTP 請求節點",
+            "自定義 JavaScript 和 regex",
+            "過濾不需要的網域",
+            "重複資料移除"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["潛在客戶生成", "本地業務研究", "市場分析"],
+          "template_url": "https://drive.google.com/file/d/1Kxsl2-sbZGKPqY_X2nluN6aujuTqbcux/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=OroDNJl-pyc",
+          "date_posted": "2025-05-01"
+        }
+      ]
+    },
+    "social_media": {
+      "name": "社交媒體自動化",
+      "description": "社交媒體內容創作、發布和管理自動化",
+      "templates": [
+        {
+          "id": "viral_linkedin_posts",
+          "name": "病毒 LinkedIn 貼文",
+          "creator": "Oleg Melnikov",
+          "description": "使用 AI 工作流程自動化 LinkedIn 病毒社交媒體貼文的創作和發布",
+          "features": [
+            "Perplexity AI 網路研究",
+            "Anthropic 品質文字生成",
+            "OpenAI Image API 圖像創作",
+            "Google Drive 參考圖像"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["LinkedIn 行銷", "品牌推廣", "內容行銷"],
+          "template_url": "https://drive.google.com/file/d/1rWO0ZJ76Sa2hmrXQVQY58n4IaM0e884f/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=YpXzTSZ6csw",
+          "date_posted": "2025-05-16"
+        },
+        {
+          "id": "youtube_growth_automation",
+          "name": "YouTube 成長自動化",
+          "creator": "Nolan Harper | Ai Automation",
+          "description": "自動化 YouTube 頻道成長，研究趨勢影片並生成改進的影片元資料",
+          "features": [
+            "表單觸發器",
+            "YouTube 爬取器和轉錄 API",
+            "Google Sheets 資料管理",
+            "OpenAI 縮圖分析和標題生成"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["YouTube 行銷", "內容策略", "頻道成長"],
+          "template_url": "https://drive.google.com/file/d/1aX49kZzkWZDXayl7uzMmtSfNNOw7J2fk/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=t6iPH93krzY",
+          "date_posted": "2025-05-30"
+        },
+        {
+          "id": "9_platform_social_poster",
+          "name": "9 平台社交發布器",
+          "creator": "Sabrina Ramonov 🍄",
+          "description": "n8n 代理每小時發布到 9 個社交平台",
+          "features": [
+            "Google Sheet 內容讀取",
+            "Google Drive 媒體提取",
+            "9 平台 API 呼叫",
+            "動態 JSON 請求"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["多平台發布", "社交媒體管理", "內容分發"],
+          "template_url": "https://drive.google.com/file/d/1UogWtgWOqfpD21SqneurX7KCp2y2fQTq/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=D9okDd_1tBI",
+          "date_posted": "2025-04-11"
+        }
+      ]
+    },
+    "business_automation": {
+      "name": "業務流程自動化",
+      "description": "客戶服務、銷售、招聘和業務流程自動化",
+      "templates": [
+        {
+          "id": "voice_ai_receptionist",
+          "name": "語音 AI 接待員",
+          "creator": "Jono Catliff",
+          "description": "使用 Vapi 構建語音 AI 接待員並與 n8n 自動化系統整合",
+          "features": [
+            "Twilio 電話號碼管理",
+            "即時通話處理",
+            "Go High Level 自動化開票",
+            "預約安排"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["客戶服務", "預約管理", "電話自動化"],
+          "template_url": "https://drive.google.com/file/d/18zq0uteI3AbyhZuq7SuXbrWslGmnPAMu/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=XeyrdkFhh_U",
+          "date_posted": "2025-05-16"
+        },
+        {
+          "id": "customer_support_automation",
+          "name": "無程式碼 AI 客戶支援系統",
+          "creator": "Ben AI",
+          "description": "使用 n8n 構建的綜合無程式碼自動化客戶支援系統",
+          "features": [
+            "Circle 社群發布",
+            "Airtable 票務儀表板",
+            "搜尋工具和 Perplexity API",
+            "自動票務創建和更新"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["客戶支援", "票務管理", "自動化回應"],
+          "template_url": "https://drive.google.com/file/d/1VVhH-po9vp3OWewlxNAuCNWnAZQD1Dmi/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=mJwZPK2A7cM",
+          "date_posted": "2025-04-24"
+        },
+        {
+          "id": "automated_hiring_workflow",
+          "name": "自動化招聘流程",
+          "creator": "Jono Catliff",
+          "description": "自動化整個招聘流程，從 Indeed 電子郵件觸發到面試安排",
+          "features": [
+            "Gmail、Google Sheets、cal.com 整合",
+            "OpenAI 代理提取職位標題",
+            "自定義 Google Apps Script",
+            "動態階段路由"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["招聘自動化", "候選人管理", "面試安排"],
+          "template_url": "https://drive.google.com/file/d/1qm916r1TGLBihsGOGJRMx_asQVyiKprd/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=dBTrOcWkYM0",
+          "date_posted": "2025-04-18"
+        }
+      ]
+    },
+    "ai_image_generation": {
+      "name": "AI 圖像生成與編輯",
+      "description": "使用 AI 生成、編輯和處理圖像",
+      "templates": [
+        {
+          "id": "graphic_design_ai_agent",
+          "name": "平面設計 AI 代理團隊",
+          "creator": "Nick Saraev",
+          "description": "24/7 工作的平面設計 AI 代理團隊",
+          "features": [
+            "OpenAI GPT Image 1 自動化",
+            "Google Drive 檔案上傳和分享",
+            "Replicate API 放大和修訂",
+            "HTTP 請求和迭代子工作流程"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["品牌設計", "視覺資產創建", "設計自動化"],
+          "template_url": "https://drive.google.com/file/d/1zVQCaCBccYJWNTAoSsuLUCaeGN8CRYcL/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=DrqR7a7lmBE",
+          "date_posted": "2025-06-12"
+        },
+        {
+          "id": "chatgpt_image_workflow",
+          "name": "ChatGPT 圖像工作流程",
+          "creator": "Jono Catliff",
+          "description": "將 ChatGPT 的新圖像模型連接到 n8n",
+          "features": [
+            "程式化圖像創建和合併",
+            "Base64 轉換",
+            "提示自定義",
+            "API 金鑰設置"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["圖像生成", "內容創作", "視覺設計"],
+          "template_url": "https://drive.google.com/file/d/1jd3WdfHF1S7d5X53Iwru_T7wFzmrcXtk/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=nGNm4IBZpGg",
+          "date_posted": "2025-06-07"
+        },
+        {
+          "id": "ai_image_automation",
+          "name": "AI 圖像自動化",
+          "creator": "MagicOps AI",
+          "description": "使用 OpenAI 的新圖像生成 API 與 n8n 創建令人驚嘆的圖像",
+          "features": [
+            "HTTP 請求節點",
+            "Base64 字串處理",
+            "Google Drive 儲存",
+            "文字到圖像和圖像到圖像轉換"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["食譜圖像", "產品照片增強", "創意設計"],
+          "template_url": "https://drive.google.com/file/d/1t4D_qE2hlc-ao6Fi0U2Zo1L3UvLwWgA8/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=SAUxo5fcLMs",
+          "date_posted": "2025-04-24"
+        }
+      ]
+    },
+    "research_automation": {
+      "name": "研究自動化",
+      "description": "自動化研究流程、資料收集和分析",
+      "templates": [
+        {
+          "id": "real_time_insights_system",
+          "name": "即時洞察系統",
+          "creator": "Mark Kashef",
+          "description": "從 X 即時提取洞察的 AI 代理",
+          "features": [
+            "Bolt.new 前端介面",
+            "Supabase 後端邊緣函數",
+            "Grok Live Search API",
+            "Pulse 代理查詢路由"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["社交媒體監控", "趨勢分析", "即時洞察"],
+          "template_url": "https://drive.google.com/file/d/1PpM0qBBIAMXdWg1-dZbzMzHa2tehbUgw/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=7NIN0KNcVdM",
+          "date_posted": "2025-06-06"
+        },
+        {
+          "id": "multi_agent_research",
+          "name": "多代理研究系統",
+          "creator": "Rory Ridgers",
+          "description": "可以研究任何事物的多代理系統",
+          "features": [
+            "專業 AI 代理",
+            "GPT-4 mini 和記憶節點",
+            "HTTP 請求和 Tavly API",
+            "Appify LinkedIn 和 Instagram 資料提取"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["市場研究", "競爭分析", "資料收集"],
+          "template_url": "https://drive.google.com/file/d/19csBF7f40IvE-Q0KQSqCul2JjgHLoZ9H/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=ciogxooQelQ",
+          "date_posted": "2025-05-12"
+        },
+        {
+          "id": "ai_content_idea_generator",
+          "name": "AI 內容想法生成器",
+          "creator": "Nolan Harper | Ai Automation",
+          "description": "每天 1,200+ 內容想法",
+          "features": [
+            "Appify actor YouTube 評論爬取",
+            "OpenAI 模型處理",
+            "Tavi 整合即時研究",
+            "Google Sheets 結果更新"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["內容策略", "創意發想", "內容規劃"],
+          "template_url": "https://drive.google.com/file/d/1bLDkLPbiK11yjYvcUWxLTVGZZyiHg2gM/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=Xno2IGHfSDo",
+          "date_posted": "2025-05-05"
+        }
+      ]
+    },
+    "communication_automation": {
+      "name": "通訊自動化",
+      "description": "電子郵件、簡訊、WhatsApp 和其他通訊管道自動化",
+      "templates": [
+        {
+          "id": "sms_ai_agent",
+          "name": "SMS AI 代理",
+          "creator": "Rory Ridgers",
+          "description": "使用 n8n 構建 SMS 基礎 AI 代理",
+          "features": [
+            "Twilio SMS 訊息",
+            "webhook 觸發流程",
+            "Google Sheets 臨時訊息緩衝",
+            "Gmail API 節點"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["客戶服務", "通知系統", "自動回應"],
+          "template_url": "https://drive.google.com/file/d/1_FgNxEA1lw6tNcMgK8y7BLNmrsgtlvbf/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=_igpx9vXYvA",
+          "date_posted": "2025-06-05"
+        },
+        {
+          "id": "whatsapp_ai_agent",
+          "name": "WhatsApp AI 代理",
+          "creator": "Leon van Zyl",
+          "description": "使用 n8n 將 AI 代理添加到 WhatsApp",
+          "features": [
+            "WhatsApp Business Cloud API",
+            "Meta Developer 平台設置",
+            "OpenAI 語音轉錄和圖像分析",
+            "對話記憶和即時網路搜尋"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["客戶支援", "自動回應", "業務通訊"],
+          "template_url": "https://drive.google.com/file/d/1qp0uJFG9h6Ps6mHWqhdIbdweg6gdJKWZ/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=LekI91ISf_8",
+          "date_posted": "2025-04-16"
+        },
+        {
+          "id": "inbox_automation",
+          "name": "收件匣自動化",
+          "creator": "Nolan Harper | Ai Automation",
+          "description": "使用 n8n 自動化電子郵件管理",
+          "features": [
+            "Gmail 觸發器監控",
+            "文字分類器路由",
+            "OpenAI 模型草擬回應",
+            "Slack 通知"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["電子郵件管理", "自動分類", "回應自動化"],
+          "template_url": "https://drive.google.com/file/d/17OYXI08wdcgIWDf-WqJ_v-V9AHRqBMrP/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=UDXDcFwAPQU",
+          "date_posted": "2025-04-21"
+        }
+      ]
+    },
+    "document_processing": {
+      "name": "文件處理",
+      "description": "PDF、圖像、發票和文件的 AI 處理",
+      "templates": [
+        {
+          "id": "invoice_tracker",
+          "name": "發票追蹤器",
+          "creator": "MagicOps AI",
+          "description": "使用 Gemini 自動化發票和費用追蹤",
+          "features": [
+            "表單觸發器檔案上傳",
+            "Google Drive 儲存",
+            "Gemini AI 檔案分析",
+            "Google Sheets 和 Slack 通知"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["會計自動化", "費用管理", "發票處理"],
+          "template_url": "https://drive.google.com/file/d/1uEbC2YozSiDhGH2v_o8LgpLmJGdq1U_Z/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=j9_gps_ZZNU",
+          "date_posted": "2025-04-14"
+        },
+        {
+          "id": "invoice_ocr_workflow",
+          "name": "發票 OCR 工作流程",
+          "creator": "Jono Catliff",
+          "description": "使用 AI 從圖像和 PDF 提取文字",
+          "features": [
+            "Telegram 觸發器",
+            "PDF 和圖像處理子流程",
+            "OpenAI ChatGPT 模型",
+            "Google Sheets 結構化輸出"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["文件處理", "資料提取", "自動化會計"],
+          "template_url": "https://drive.google.com/file/d/1WVAtOzI_nFxYrRydcCxfnvAjC3GPrjW_/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=ZXF9FcN11DI",
+          "date_posted": "2025-04-05"
+        },
+        {
+          "id": "gemini_media_analyzer",
+          "name": "Gemini 媒體分析器",
+          "creator": "MagicOps AI",
+          "description": "使用 Gemini 和 n8n 分析任何影片、圖像或 PDF",
+          "features": [
+            "HTTP 請求節點",
+            "可恢復上傳技術",
+            "動態 JSON 處理",
+            "API 整合"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["媒體分析", "內容研究", "文件處理"],
+          "template_url": "https://drive.google.com/file/d/1IpgIE8XTSjCBDWqlwdp93HPGU7Iq_6YE/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=OWJKGkPEGSw",
+          "date_posted": "2025-04-01"
+        }
+      ]
+    },
+    "web_development": {
+      "name": "網頁開發與應用",
+      "description": "網站建設、應用開發和網頁自動化",
+      "templates": [
+        {
+          "id": "seo_audit_webapp",
+          "name": "SEO 審計網頁應用",
+          "creator": "Jono Catliff",
+          "description": "使用 Firebase Studio + n8n 在 30 分鐘內構建網頁應用",
+          "features": [
+            "webhook 觸發 Appify 審計",
+            "HTTP 請求模組",
+            "聊天代理分組和格式化",
+            "動態儀表板聚合器"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["SEO 分析", "網站優化", "效能監控"],
+          "template_url": "https://drive.google.com/file/d/1KpjLcnmTArk39AAkGDw25QWECoMHEWB9/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=MCRF1914Fxs",
+          "date_posted": "2025-06-04"
+        },
+        {
+          "id": "lovable_web_app_builder",
+          "name": "Lovable 網頁應用構建器",
+          "creator": "Jono Catliff",
+          "description": "Lovable + n8n 在幾分鐘內為您構建網頁應用",
+          "features": [
+            "webhook 觸發器",
+            "HTML 爬取網站內容清理",
+            "Dolly3 圖像生成",
+            "OpenAI 文字創作"
+          ],
+          "difficulty": "初級",
+          "use_cases": ["快速原型", "應用開發", "網站建設"],
+          "template_url": "https://drive.google.com/file/d/1g1By_B5MBr1R7KDdHvN4NHAaf9Ysmi8g/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=i08K-l8pjfs",
+          "date_posted": "2025-04-28"
+        },
+        {
+          "id": "website_chatbot",
+          "name": "網站聊天機器人",
+          "creator": "Jono Catliff",
+          "description": "在幾分鐘內將 ChatGPT 添加到您的網站",
+          "features": [
+            "嵌入式聊天觸發器",
+            "OpenAI 回應 AI 代理",
+            "發票生成次要工作流程",
+            "動態資料提取"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["客戶支援", "網站互動", "自動化回應"],
+          "template_url": "https://drive.google.com/file/d/1cGgIf2-fYp11MV5d3FhDSUuD1bgwCe5_/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=4VD-6dFQJsk",
+          "date_posted": "2025-03-16"
+        }
+      ]
+    },
+    "advanced_ai": {
+      "name": "進階 AI 技術",
+      "description": "RAG、MCP、本地 AI 和進階 AI 代理技術",
+      "templates": [
+        {
+          "id": "contextual_rag",
+          "name": "上下文 RAG",
+          "creator": "Cole Medin",
+          "description": "準確 RAG 的最簡單策略",
+          "features": [
+            "Google Drive 觸發器",
+            "自定義 JavaScript 文字分塊",
+            "Neon serverless Postgres",
+            "GPT 4.1 nano 提示快取"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["文件檢索", "知識管理", "AI 增強"],
+          "template_url": "https://drive.google.com/file/d/1Reoo3rAtAujEFVusHNbReSVE67CZuoFq/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=z_LGan-t2Mo",
+          "date_posted": "2025-05-08"
+        },
+        {
+          "id": "mcp_integration",
+          "name": "MCP 整合",
+          "creator": "Jono Catliff",
+          "description": "n8n 發布 MCP - 這是 AI 和無程式碼的未來嗎？",
+          "features": [
+            "MCP 客戶端和伺服器觸發器",
+            "SSE 端點通訊",
+            "工具發現和自動生成模式",
+            "JSON 參數格式化"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["AI 代理整合", "工具協調", "自動化工作流程"],
+          "template_url": "https://drive.google.com/file/d/1a32FZaRDmUr8f8ah63rpl2z0cn0atbTn/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=Nw0v1-24x5w",
+          "date_posted": "2025-04-18"
+        },
+        {
+          "id": "local_ai_rag_agent",
+          "name": "本地 AI RAG 代理",
+          "creator": "Cole Medin",
+          "description": "終極 n8n RAG AI 代理模板 - 本地 AI 版本",
+          "features": [
+            "離線安全 RAG",
+            "PDF、CSV、文字檔案攝取",
+            "PostgreSQL 文件資料",
+            "Ollama 本地 LLM 處理"
+          ],
+          "difficulty": "高級",
+          "use_cases": ["本地 AI", "隱私保護", "離線處理"],
+          "template_url": "https://drive.google.com/file/d/152Q2fgzduqmE1EpjadZu8WkwGtLtcYrU/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=T2QWhXpnT5I",
+          "date_posted": "2025-03-06"
+        }
+      ]
+    },
+    "productivity_tools": {
+      "name": "生產力工具",
+      "description": "提高工作效率的自動化工具和系統",
+      "templates": [
+        {
+          "id": "google_workspace_setup",
+          "name": "Google Workspace 設置",
+          "creator": "Jono Catliff",
+          "description": "在 5 分鐘內在 n8n 中設置 Google 憑證",
+          "features": [
+            "Gmail、Drive、Sheets、Docs、Calendar、Slides",
+            "Google Cloud Console 配置",
+            "API 啟用和 OAuth 同意設置",
+            "重定向 URI 網頁應用憑證"
+          ],
+          "difficulty": "初級",
+          "use_cases": ["Google 服務整合", "API 設置", "工作流程基礎"],
+          "template_url": "https://drive.google.com/file/d/1KEGYRGnI2mNleanuyZqkNR5EFbAwo1fU/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=H1Kt1adcr84",
+          "date_posted": "2025-05-27"
+        },
+        {
+          "id": "error_logger_workflow",
+          "name": "錯誤記錄器工作流程",
+          "creator": "Nate Herk | AI Automation",
+          "description": "一個 n8n 工作流程處理無限錯誤處理",
+          "features": [
+            "全域錯誤觸發器",
+            "Google Sheet 錯誤記錄",
+            "Slack 通知",
+            "時間戳和工作流程名稱記錄"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["錯誤監控", "系統維護", "除錯"],
+          "template_url": "https://drive.google.com/file/d/1_EF3ESE9zRSrFNVgMwhMcTm23JwYzWLW/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=bTF3tACqPRU",
+          "date_posted": "2025-04-20"
+        },
+        {
+          "id": "agent_tracking_system",
+          "name": "代理追蹤系統",
+          "creator": "Nate Herk | AI Automation",
+          "description": "如何自動追蹤 AI 代理動作和 token 使用量",
+          "features": [
+            "初始輸入記錄",
+            "中間步驟和 API 呼叫",
+            "Google Sheet 日誌記錄",
+            "成本計算和可觀察性"
+          ],
+          "difficulty": "中級",
+          "use_cases": ["成本管理", "效能監控", "使用量追蹤"],
+          "template_url": "https://drive.google.com/file/d/10WibhA7rvZoFvyS3ywOK9xy9dRJvXK_p/view?usp=drive_link",
+          "video_url": "https://www.youtube.com/watch?v=vVdS-ZEFf50",
+          "date_posted": "2025-05-03"
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "total_templates": 1223,
+    "categories_count": 15,
+    "creators_count": 25,
+    "difficulty_distribution": {
+      "beginner": 15,
+      "intermediate": 45,
+      "advanced": 40
+    },
+    "popular_use_cases": [
+      "內容創作自動化",
+      "潛在客戶生成",
+      "客戶服務",
+      "社交媒體管理",
+      "資料處理",
+      "行銷自動化",
+      "AI 代理開發",
+      "文件處理"
+    ],
+    "top_creators": [
+      "Nate Herk | AI Automation",
+      "Jono Catliff",
+      "Nick Saraev",
+      "Cole Medin",
+      "Rory Ridgers",
+      "Oleg Melnikov",
+      "Nolan Harper | Ai Automation",
+      "MagicOps AI"
+    ]
+  },
+  "search_index": {
+    "keywords": [
+      "AI 代理", "自動化", "n8n", "工作流程", "內容創作", "行銷", "社交媒體",
+      "潛在客戶生成", "客戶服務", "資料處理", "圖像生成", "影片製作",
+      "電子郵件自動化", "網站爬取", "RAG", "MCP", "本地 AI", "ChatGPT",
+      "OpenAI", "Google Sheets", "API 整合", "無程式碼", "機器學習"
+    ],
+    "tags": [
+      "beginner-friendly", "advanced", "free-template", "paid-template",
+      "video-tutorial", "step-by-step", "api-integration", "ai-powered",
+      "automation", "productivity", "marketing", "sales", "content-creation"
+    ]
+  }
+} 
