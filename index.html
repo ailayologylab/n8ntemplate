@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f4f6f8; /* 改為淺灰色背景 */
             min-height: 100vh;
             padding: 20px;
         }
@@ -28,7 +28,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: #6667AB; /* Very Peri */
             color: white;
             padding: 30px;
             text-align: center;
@@ -55,11 +55,27 @@
             display: flex;
             gap: 15px;
             margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .search-input-wrapper {
+            position: relative; /* 為了定位圖示 */
+            flex: 1;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 18px;
+            pointer-events: none; /* 讓圖示不會擋到滑鼠點擊 */
         }
 
         .search-input {
-            flex: 1;
-            padding: 12px 20px;
+            width: 100%;
+            padding: 12px 20px 12px 45px; /* 為圖示留出空間 */
             border: 2px solid #e9ecef;
             border-radius: 25px;
             font-size: 16px;
@@ -68,8 +84,15 @@
         }
 
         .search-input:focus {
-            border-color: #4facfe;
-            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+            border-color: #6667AB; /* Very Peri */
+            box-shadow: 0 0 0 3px rgba(102, 103, 171, 0.1);
+        }
+
+        mark {
+            background-color: #F5E2A8; /* Cornsilk */
+            padding: 2px 1px;
+            border-radius: 3px;
+            color: black;
         }
 
         .filter-select {
@@ -84,12 +107,13 @@
 
         .stats {
             display: flex;
-            justify-content: space-between;
+            gap: 20px; /* 控制項目之間的間距 */
             align-items: center;
             margin-top: 20px;
         }
 
         .stat-item {
+            flex: 1; /* 讓每個項目佔據相等的空間 */
             text-align: center;
             padding: 15px;
             background: white;
@@ -100,7 +124,7 @@
         .stat-number {
             font-size: 1.5em;
             font-weight: bold;
-            color: #4facfe;
+            color: #6667AB; /* Very Peri */
         }
 
         .stat-label {
@@ -123,7 +147,7 @@
         }
 
         .data-table th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #6667AB; /* Very Peri */
             color: white;
             padding: 15px;
             text-align: left;
@@ -159,7 +183,7 @@
         }
 
         .template-creator {
-            color: #4facfe;
+            color: #E85B69; /* Paradise Pink */
             font-weight: 500;
             font-size: 0.9em;
         }
@@ -172,7 +196,7 @@
         .link-button {
             display: inline-block;
             padding: 8px 16px;
-            background: #4facfe;
+            background: #E85B69; /* Paradise Pink */
             color: white;
             text-decoration: none;
             border-radius: 20px;
@@ -182,32 +206,35 @@
         }
 
         .link-button:hover {
-            background: #3a8bfd;
+            opacity: 0.85;
             transform: translateY(-1px);
         }
 
         .youtube-link {
-            background: #ff0000;
+            background: #C8755B; /* Tawny Orange */
         }
 
         .youtube-link:hover {
-            background: #cc0000;
+            background: #C8755B;
+            opacity: 0.85;
         }
 
         .template-link {
-            background: #28a745;
+            background: #82A8B5; /* Tourmaline */
         }
 
         .template-link:hover {
-            background: #218838;
+            background: #82A8B5;
+            opacity: 0.85;
         }
 
         .resource-link {
-            background: #6f42c1;
+            background: #D85987; /* Pink Flambé */
         }
 
         .resource-link:hover {
-            background: #5a32a3;
+            background: #D85987;
+            opacity: 0.85;
         }
 
         .pagination {
@@ -230,9 +257,9 @@
         }
 
         .page-btn:hover, .page-btn.active {
-            background: #4facfe;
+            background: #6667AB; /* Very Peri */
             color: white;
-            border-color: #4facfe;
+            border-color: #6667AB; /* Very Peri */
         }
 
         .page-btn:disabled {
@@ -286,7 +313,10 @@
 
         <div class="search-section">
             <div class="search-box">
-                <input type="text" id="searchInput" class="search-input" placeholder="搜尋模板名稱、描述或創建者...">
+                <div class="search-input-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="例如：輸入 'RAG' (僅比對完整單詞)">
+                </div>
                 <select id="creatorFilter" class="filter-select">
                     <option value="">所有創建者</option>
                 </select>
@@ -424,14 +454,17 @@
         }
 
         function filterData() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const searchTerm = document.getElementById('searchInput').value;
             const selectedCreator = document.getElementById('creatorFilter').value;
             
+            // 創建正規表示式，用於比對完整單詞
+            const searchRegex = searchTerm ? new RegExp('\\b' + searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + '\\b', 'i') : null;
+
             filteredData = allData.filter(item => {
-                const matchesSearch = !searchTerm || 
-                    item.name.toLowerCase().includes(searchTerm) ||
-                    item.description.toLowerCase().includes(searchTerm) ||
-                    item.creator.toLowerCase().includes(searchTerm);
+                const matchesSearch = !searchRegex ||
+                    (item.name && searchRegex.test(item.name)) ||
+                    (item.description && searchRegex.test(item.description)) ||
+                    (item.creator && searchRegex.test(item.creator));
                 
                 const matchesCreator = !selectedCreator || item.creator === selectedCreator;
                 
@@ -443,9 +476,19 @@
             renderTable();
             renderPagination();
         }
+        
+        function highlightMatches(text, searchTerm) {
+            if (!searchTerm || !text) {
+                return text;
+            }
+            const escapedSearchTerm = searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+            const regex = new RegExp('\\b(' + escapedSearchTerm + ')\\b', 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
 
         function renderTable() {
             const tbody = document.getElementById('tableBody');
+            const searchTerm = document.getElementById('searchInput').value;
             const startIndex = (currentPage - 1) * itemsPerPage;
             const endIndex = startIndex + itemsPerPage;
             const pageData = filteredData.slice(startIndex, endIndex);
@@ -455,14 +498,19 @@
                 return;
             }
             
-            tbody.innerHTML = pageData.map(item => `
+            tbody.innerHTML = pageData.map(item => {
+                const nameHTML = highlightMatches(item.name || '未命名', searchTerm);
+                const descriptionHTML = highlightMatches(item.description || '無描述', searchTerm);
+                const creatorHTML = highlightMatches(item.creator || '未知', searchTerm);
+
+                return `
                 <tr>
                     <td>
-                        <div class="template-name">${item.name || '未命名'}</div>
-                        <div class="template-description">${item.description || '無描述'}</div>
+                        <div class="template-name">${nameHTML}</div>
+                        <div class="template-description">${descriptionHTML}</div>
                     </td>
                     <td>
-                        <div class="template-creator">${item.creator || '未知'}</div>
+                        <div class="template-creator">${creatorHTML}</div>
                     </td>
                     <td>
                         <div class="template-date">${formatDate(item.date_posted)}</div>
@@ -473,7 +521,7 @@
                         ${item.resource_url ? `<a href="${item.resource_url}" target="_blank" class="link-button resource-link">資源</a>` : ''}
                     </td>
                 </tr>
-            `).join('');
+            `}).join('');
         }
 
         function formatDate(dateString) {
